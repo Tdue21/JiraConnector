@@ -14,7 +14,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Atlassian.plvs</RootNamespace>
     <AssemblyName>plvs2010</AssemblyName>
-    <SignAssembly>False</SignAssembly>
+    <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <ProjectTypeGuids>{82b43b9b-a64c-4715-b499-d71e9ca2bd60};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -56,6 +56,19 @@
     <Reference Include="EnvDTE, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Program Files\Microsoft Visual Studio 9.0\Common7\IDE\PublicAssemblies\EnvDTE.dll</HintPath>
+    </Reference>
+    <Reference Include="EnvDTE100, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="EnvDTE80, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="EnvDTE90, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualStudio.CommandBars, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.CoreUtility, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -100,6 +113,9 @@
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Data" />
@@ -388,6 +404,8 @@
     <Compile Include="models\jira\JiraActionFieldType.cs" />
     <Compile Include="api\jira\JiraUserCache.cs" />
     <Compile Include="net\ProxyListener.cs" />
+    <Compile Include="PlvsPackage.cs" />
+    <Compile Include="RootWindowCommand.cs" />
     <Compile Include="scm\AnkhSvnJiraActiveIssueControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -601,9 +619,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="GlobalSuppressions.cs" />
-    <Compile Include="plvsPackage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PkgCmdID.cs" />
     <Compile Include="store\DPApi.cs" />
     <Compile Include="store\ParameterStore.cs" />
     <Compile Include="windows\ToolWindowManager.cs" />
@@ -664,12 +680,6 @@
     <Compile Include="util\PlvsUtils.cs" />
     <Compile Include="util\jira\JiraIssueUtils.cs" />
     <Compile Include="util\StreamEater.cs" />
-    <Compile Include="PlvsVersionInfo.cs" />
-    <Compile Include="VSPackage.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>VSPackage.resx</DependentUpon>
-    </Compile>
     <Compile Include="Web References\Atlassian.plvs.api.soap.service\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -826,6 +836,10 @@
     <EmbeddedResource Include="util\FileListPicker.resx">
       <DependentUpon>FileListPicker.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VSPackage.resx">
+      <MergeWithCTO>true</MergeWithCTO>
+      <ManifestResourceName>VSPackage</ManifestResourceName>
+    </EmbeddedResource>
     <EmbeddedResource Include="windows\AtlassianPanel.resx">
       <DependentUpon>AtlassianPanel.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -835,15 +849,9 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="VSPackage.resx">
-      <MergeWithCTO>true</MergeWithCTO>
-      <SubType>Designer</SubType>
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>VSPackage.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-  <!--VSCTCompile Include="plvsSMW.vsct"> <ResourceName>Menus.ctmenu</ResourceName> </VSCTCompile--> 
+    <!--VSCTCompile Include="plvsSMW.vsct"> <ResourceName>Menus.ctmenu</ResourceName> </VSCTCompile-->
     <None Include="app.config" />
     <None Include="Key.snk" />
     <Content Include="LICENSE.txt">
@@ -940,6 +948,11 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <VSCTCompile Include="PlvsPackage.vsct">
+      <ResourceName>Menus.ctmenu</ResourceName>
+    </VSCTCompile>
+    <Content Include="Resources\Command1.png" />
+    <None Include="Resources\Icon1.ico" />
     <Content Include="Resources\icons\about.png" />
     <Content Include="Resources\icons\add_jira.png" />
     <Content Include="Resources\icons\ajax-loader.gif" />
@@ -1051,6 +1064,10 @@
     <None Include="Resources\icons\update_unavailable1.ico" />
     <Content Include="Resources\icons\VSObject_Class.png" />
     <Content Include="Resources\icons\VSObject_Namespace.png" />
+    <None Include="Resources\Image1.png" />
+    <None Include="Resources\ide_plugin_16.ico" />
+    <Content Include="Resources\PlvsPackage.ico" />
+    <Content Include="Resources\RootWindowCommand.png" />
     <Content Include="Resources\texts\attachment_download_html.txt" />
     <Content Include="Resources\texts\autoupdate_html.txt" />
     <Content Include="Resources\texts\build_summary_html.txt" />
@@ -1060,7 +1077,9 @@
     <Content Include="Resources\texts\issue_summary_parent_issue_html.txt" />
     <Content Include="Resources\texts\issue_summary_remaining_estimate_editable_html.txt" />
     <Content Include="Resources\texts\throbber_html.txt" />
-    <None Include="source.extension.vsixmanifest" />
+    <None Include="source.extension.vsixmanifest">
+      <SubType>Designer</SubType>
+    </None>
     <Content Include="third party\ankh\Ankh.ExtensionPoints.dll" />
     <Content Include="third party\newtonsoft\Newtonsoft.Json.dll" />
     <Content Include="third party\treeviewadv\Aga.Controls.dll" />
@@ -1107,7 +1126,6 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
   <PropertyGroup>
     <!--
     To specify a different registry root to register your package, uncomment the TargetRegistryRoot
@@ -1125,6 +1143,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>false</Prefer32Bit>
+    <DeployExtension>True</DeployExtension>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <OutputPath>bin\Release\</OutputPath>

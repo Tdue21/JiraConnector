@@ -17,7 +17,7 @@ using Atlassian.plvs.util;
 namespace Atlassian.plvs.dialogs {
     public partial class ProjectConfiguration : Form {
         private readonly TreeNode jiraRoot = new TreeNode("JIRA Servers", 0, 0);
-        private readonly TreeNode bambooRoot = new TreeNode("Bamboo Servers", 1, 1);
+//        private readonly TreeNode bambooRoot = new TreeNode("Bamboo Servers", 1, 1);
 //        private readonly TreeNode crucibleRoot = new TreeNode("Crucible Servers");
 //        private readonly TreeNode fisheyeRoot = new TreeNode("Fisheye Servers");
 
@@ -60,7 +60,7 @@ namespace Atlassian.plvs.dialogs {
             serverTree.ImageList = imageList;
 
             serverTree.Nodes.Add(jiraRoot);
-            serverTree.Nodes.Add(bambooRoot);
+//            serverTree.Nodes.Add(bambooRoot);
 //            serverTree.Nodes.Add(crucibleRoot);
 //            serverTree.Nodes.Add(fisheyeRoot);
 
@@ -68,9 +68,9 @@ namespace Atlassian.plvs.dialogs {
                 jiraRoot.Nodes.Add(new JiraServerTreeNode(jiraServerModel, server, server.Enabled ? JIRA_ENABLED : JIRA_DISABLED));
             }
 
-            foreach (var server in bambooServers) {
-                bambooRoot.Nodes.Add(new BambooServerTreeNode(bambooServerModel, server, server.Enabled ? BAMBOO_ENABLED : BAMBOO_DISABLED));
-            }
+            //foreach (var server in bambooServers) {
+            //    bambooRoot.Nodes.Add(new BambooServerTreeNode(bambooServerModel, server, server.Enabled ? BAMBOO_ENABLED : BAMBOO_DISABLED));
+            //}
 
             StartPosition = FormStartPosition.CenterParent;
 
@@ -80,7 +80,7 @@ namespace Atlassian.plvs.dialogs {
                 if (serverTypeToCreate.Value.Equals(Server.JiraServerTypeGuid)) {
                     serverTree.SelectedNode = jiraRoot;
                 } else if (serverTypeToCreate.Value.Equals(Server.BambooServerTypeGuid)) {
-                    serverTree.SelectedNode = bambooRoot;
+                    //serverTree.SelectedNode = bambooRoot;
                 }
             }
         }
@@ -131,16 +131,16 @@ namespace Atlassian.plvs.dialogs {
         }
 
         private void addNewBambooServer() {
-            var dialog = new AddOrEditBambooServer(null, bambooFacade);
-            var result = dialog.ShowDialog();
-            if (result != DialogResult.OK) return;
+            //var dialog = new AddOrEditBambooServer(null, bambooFacade);
+            //var result = dialog.ShowDialog();
+            //if (result != DialogResult.OK) return;
 
-            bambooServerModel.addServer(dialog.Server);
-            var newNode = new BambooServerTreeNode(bambooServerModel, dialog.Server, dialog.Server.Enabled ? BAMBOO_ENABLED : BAMBOO_DISABLED);
-            bambooRoot.Nodes.Add(newNode);
-            serverTree.ExpandAll();
-            serverTree.SelectedNode = newNode;
-            SomethingChanged = true;
+            //bambooServerModel.addServer(dialog.Server);
+            //var newNode = new BambooServerTreeNode(bambooServerModel, dialog.Server, dialog.Server.Enabled ? BAMBOO_ENABLED : BAMBOO_DISABLED);
+            //bambooRoot.Nodes.Add(newNode);
+            //serverTree.ExpandAll();
+            //serverTree.SelectedNode = newNode;
+            //SomethingChanged = true;
         }
 
         private void addNewJiraServer() {
@@ -202,7 +202,7 @@ namespace Atlassian.plvs.dialogs {
 
                 selectedNode.Remove();
                 bambooServerModel.removeServer(selectedNode.Server.GUID);
-                serverTree.SelectedNode = bambooRoot;
+                //serverTree.SelectedNode = bambooRoot;
             }
             serverTree.ExpandAll();
             SomethingChanged = true;
@@ -264,6 +264,11 @@ namespace Atlassian.plvs.dialogs {
                 SomethingChanged = true;
                 updateUi();
             }
+        }
+
+        private void ProjectConfiguration_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -73,7 +73,7 @@ namespace Atlassian.plvs.eventsinks {
                 RecentlyViewedIssuesModel.Instance.load();
                 JiraCustomFilter.load();
 
-                DTE dte = (DTE)package.GetService(typeof(DTE));
+                DTE dte = (DTE) Package.GetGlobalService(typeof(DTE));
                 PlvsUtils.Dte = dte;
 
                 ToolWindowManager.Instance.AtlassianWindow = createAtlassianWindow();
@@ -91,7 +91,7 @@ namespace Atlassian.plvs.eventsinks {
             }
             catch (Exception e) {
                 Debug.WriteLine(e);
-                new ExceptionViewer("Failed to initialize Atlassian tool windows", e).ShowDialog();
+                new ExceptionViewer("Failed to initialize JIRA tool windows", e).ShowDialog();
             }
 
             return VSConstants.S_OK;

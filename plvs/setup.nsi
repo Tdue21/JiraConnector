@@ -24,7 +24,7 @@ LicenseData LICENSE
 OutFile "plvs\bin\Release\plvs-setup.exe"
 
 ; The default installation directory
-InstallDir "$PROGRAMFILES\Atlassian Connector For Visual Studio"
+InstallDir "$PROGRAMFILES\JIRA Connector For Visual Studio"
 
 ; Registry key to check for directory (so if you install again, it will 
 ; overwrite the old one automatically)
@@ -377,9 +377,9 @@ Section "Connector Files"
 	WriteRegStr HKLM SOFTWARE\Atlassian\Plvs "Install_Dir" "$INSTDIR"
   
 	; Write the uninstall keys for Windows
-	WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Plvs" "DisplayName" "Atlassian Connector For Visual Studio"
+	WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Plvs" "DisplayName" "JIRA Connector For Visual Studio"
 	WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Plvs" "DisplayVersion" "${VERSION}"
-	WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Plvs" "Publisher" "Atlassian"
+	WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Plvs" "Publisher" "STH"
 	WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Plvs" "UninstallString" '"$INSTDIR\uninstall.exe"'
 	WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Plvs" "NoModify" 1
 	WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Plvs" "NoRepair" 1

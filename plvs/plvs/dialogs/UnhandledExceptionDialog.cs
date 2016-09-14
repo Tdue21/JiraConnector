@@ -25,7 +25,7 @@ namespace Atlassian.plvs.dialogs {
                 StringBuilder url = new StringBuilder("https://ecosystem.atlassian.net/secure/CreateIssueDetails!init.jspa?pid=13773&issuetype=1");
                 url.Append("&environment=");
                 StringBuilder env = new StringBuilder();
-                env.Append("connector version: ").Append(PlvsVersionInfo.VersionAndStamp);
+
                 DTE dte = PlvsUtils.Dte;
                 if (dte != null) {
                     env.Append("\nVisual Studio version: ").Append(dte.Version).Append(", ").Append(dte.Edition);

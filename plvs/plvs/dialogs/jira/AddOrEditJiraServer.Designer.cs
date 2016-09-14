@@ -213,7 +213,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AddOrEditJiraServer";
-            this.Text = "AddOrEditJiraServer";
+            this.Text = "Jira Server Configuration";
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.addOrEditJiraServerKeyPress);
             this.ResumeLayout(false);
             this.PerformLayout();

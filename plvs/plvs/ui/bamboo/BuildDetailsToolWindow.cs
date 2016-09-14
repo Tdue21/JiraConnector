@@ -9,7 +9,7 @@ namespace Atlassian.plvs.ui.bamboo {
        private readonly BuildDetailsWindow control;
 
        public BuildDetailsToolWindow() : base(null) {
-            Caption = Resources.BuildDetailsToolWindowTitle;
+            Caption = "Bambo";
             BitmapResourceID = 301;
             BitmapIndex = 4;
 

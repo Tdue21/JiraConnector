@@ -11,7 +11,6 @@ namespace Atlassian.plvs.dialogs {
             InitializeComponent();
 
             picture.Image = Resources.atlassian_538x235;
-            browser.DocumentText = string.Format(Resources.about_html, PlvsVersionInfo.Version, PlvsVersionInfo.BuildType, PlvsVersionInfo.Stamp);
             browser.ScrollBarsEnabled = false;
 
             StartPosition = FormStartPosition.CenterParent;

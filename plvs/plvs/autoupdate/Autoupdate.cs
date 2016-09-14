@@ -167,12 +167,7 @@ namespace Atlassian.plvs.autoupdate {
                 it.MoveNext();
                 ReleaseNotesUrl = it.Current.Value.Trim();
 
-                if (PlvsVersionInfo.Stamp.CompareTo(stamp) < 0) {
-                    if (issueListWindow != null && updateToolWindowButton) {
-                        issueListWindow.setAutoupdateAvailable(showUpdateDialog);
-                    }
-                    return true;
-                }
+
             } catch (Exception ex) {
                 if (issueListWindow != null && updateToolWindowButton) {
                     issueListWindow.setAutoupdateUnavailable(ex);

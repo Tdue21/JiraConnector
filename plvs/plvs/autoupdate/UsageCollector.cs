@@ -45,8 +45,6 @@ namespace Atlassian.plvs.autoupdate {
 
                 sb.Append("?uid=").Append(instanceGuid);
 
-                sb.Append("&version=").Append(PlvsVersionInfo.Version);
-
                 var jiras = JiraServerModel.Instance.getAllServers();
                 sb.Append("&jiraServers=").Append(jiras != null ? jiras.Count : 0);
 

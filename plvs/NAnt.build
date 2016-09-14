@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<project name="Atlassian Connector for Visual Studio" default="help" basedir=".">
+<project name="JIRA Connector for Visual Studio" default="help" basedir=".">
   
   <!--  overridable properties-->
   <property name="configuration" value="Release" overwrite="false" />
