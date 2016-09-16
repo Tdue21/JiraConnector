@@ -843,7 +843,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <VSCTCompile Include="plvs.vsct"> <ResourceName>Menus.ctmenu</ResourceName> </VSCTCompile>
+    <VSCTCompile Include="plvs.vsct">
+      <ResourceName>Menus.ctmenu</ResourceName>
+    </VSCTCompile>
     <None Include="app.config" />
     <None Include="Key.snk" />
     <Content Include="LICENSE.txt">
@@ -940,11 +942,16 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="plvs.vsct" />
     <Content Include="Resources\icons\about.png" />
-    <Content Include="Resources\icons\add_jira.png" />
+    <Content Include="Resources\icons\add_jira.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="Resources\icons\ajax-loader.gif" />
-    <Content Include="Resources\icons\atlassian-538x235.png" />
+    <Content Include="Resources\icons\atlassian-538x235.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="Resources\icons\atlassian-installer.bmp" />
     <Content Include="Resources\icons\Atlassian.png" />
     <Content Include="Resources\icons\bamboo-blue-16-with-padding.png" />
