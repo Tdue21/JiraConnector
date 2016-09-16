@@ -50,6 +50,7 @@ namespace Atlassian.plvs {
     [ProvideToolWindowVisibility(typeof(BuildDetailsToolWindow), UIContextGuids.SolutionExists)]
     [ProvideIssueRepositoryConnector(typeof(AnkhSvnJiraConnector), AnkhSvnJiraConnector.ANKH_CONNECTOR_NAME, typeof(PlvsPackage), "#113")]
     [Guid(GuidList.guidplvsPkgString)]
+    [ProvideMenuResource("Menus.ctmenu", 1)]
     public sealed class PlvsPackage : Package, IVsPersistSolutionOpts, IVsInstalledProduct {
         public const string MINIMUM_VISUAL_STUDIO_EDITION = "Standard";
         public const string PRODUCT_NAME = "Atlassian Connector for Visual Studio";

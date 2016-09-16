@@ -843,7 +843,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-  <!--VSCTCompile Include="plvsSMW.vsct"> <ResourceName>Menus.ctmenu</ResourceName> </VSCTCompile--> 
+    <VSCTCompile Include="plvs.vsct"> <ResourceName>Menus.ctmenu</ResourceName> </VSCTCompile>
     <None Include="app.config" />
     <None Include="Key.snk" />
     <Content Include="LICENSE.txt">
@@ -940,6 +940,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="plvs.vsct" />
     <Content Include="Resources\icons\about.png" />
     <Content Include="Resources\icons\add_jira.png" />
     <Content Include="Resources\icons\ajax-loader.gif" />
