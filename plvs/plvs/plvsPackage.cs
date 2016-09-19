@@ -72,6 +72,7 @@ namespace Atlassian.plvs {
             IVsWindowFrame windowFrame = (IVsWindowFrame) window.Frame;
             AtlassianPanel.Instance.WindowFrame = window;
             ErrorHandler.ThrowOnFailure(windowFrame.Show());
+            MakeInvisible(); // switch it off!!
             return window;
         }
 
@@ -383,7 +384,11 @@ namespace Atlassian.plvs {
         }
 
         private static void toggleToolWindowMenuItemCallback(object sender, EventArgs e) {
-            ToolWindowManager.Instance.AtlassianWindowVisible = !ToolWindowManager.Instance.AtlassianWindowVisible;
+                ToolWindowManager.Instance.AtlassianWindowVisible = !ToolWindowManager.Instance.AtlassianWindowVisible;
+        }
+        private static void MakeInvisible()
+        {
+            ToolWindowManager.Instance.AtlassianWindowVisible = false;
         }
 
         private static void toggleToolWindow_BeforeQueryStatus(object sender, EventArgs e) {

@@ -1142,7 +1142,7 @@ namespace Atlassian.plvs {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Atlassian.
+        ///   Looks up a localized string similar to JIRA.
         /// </summary>
         internal static string ToolWindowTitle {
             get {

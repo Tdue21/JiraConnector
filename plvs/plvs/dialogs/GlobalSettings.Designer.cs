@@ -232,6 +232,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(546, 274);
             this.tabControl1.TabIndex = 8;
+            this.tabControl1.Visible = false;
             // 
             // tabPage1
             // 
@@ -305,7 +306,7 @@
             0});
             this.numericMaxIssueLinksFileLength.ValueChanged += new System.EventHandler(this.numericMaxIssueLinksFileLength_ValueChanged);
             // 
-            // radioDisableIssueLInksForLargeFiles
+            // radioDisableIssueLinksForLargeFiles
             // 
             this.radioDisableIssueLinksForLargeFiles.AutoSize = true;
             this.radioDisableIssueLinksForLargeFiles.Location = new System.Drawing.Point(19, 67);

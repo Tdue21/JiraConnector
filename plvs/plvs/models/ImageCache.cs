@@ -73,7 +73,7 @@ namespace Atlassian.plvs.models {
         }
 
         private static HttpWebResponse getResponse(Server server, string url) {
-            string authUrl = server == null ? url : url + "?" + CredentialUtils.getOsAuthString(server);
+            string authUrl = server == null ? url : url + "&" + CredentialUtils.getOsAuthString(server);
 
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(authUrl);
             request.KeepAlive = true;
