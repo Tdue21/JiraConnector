@@ -51,6 +51,32 @@ namespace Atlassian.plvs.dialogs.jira {
             t.Start();
         }
 
+        public FieldEditor(string title, JiraIssueListModel model, AbstractJiraServerFacade facade, JiraIssue issue, string fieldId, Control parent, Point location)
+        {
+            PlvsLogger.log("FieldEditor - ctor");
+
+            this.model = model;
+            this.facade = facade;
+            this.issue = issue;
+            this.fieldId = fieldId;
+
+            InitializeComponent();
+
+            buttonOk.Enabled = false;
+            buttonCancel.Enabled = false;
+
+            StartPosition = FormStartPosition.Manual;
+            Point parentLoc = parent.PointToScreen(parent.Location);
+            Location = new Point(parentLoc.X + location.X, parentLoc.Y + location.Y);
+
+            Text = title;
+
+            field = new JiraField(fieldId, null);
+
+            Thread t = PlvsUtils.createThread(fillFieldWrap);
+            t.Start();
+        }
+
         public override sealed string Text {
             get { return base.Text; }
             set { base.Text = value; }

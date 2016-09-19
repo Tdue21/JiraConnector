@@ -37,7 +37,30 @@ namespace Atlassian.plvs.ui.jira {
             this.jiraStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.issueTabs = new System.Windows.Forms.TabControl();
             this.tabSummary = new System.Windows.Forms.TabPage();
-            this.issueSummary = new System.Windows.Forms.WebBrowser();
+            this.updatedText = new System.Windows.Forms.TextBox();
+            this.createdText = new System.Windows.Forms.TextBox();
+            this.resolutionText = new System.Windows.Forms.TextBox();
+            this.reporterText = new System.Windows.Forms.TextBox();
+            this.assigneeText = new System.Windows.Forms.TextBox();
+            this.componentText = new System.Windows.Forms.TextBox();
+            this.priorityText = new System.Windows.Forms.TextBox();
+            this.statusText = new System.Windows.Forms.TextBox();
+            this.typeText = new System.Windows.Forms.TextBox();
+            this.summaryText = new System.Windows.Forms.TextBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.assigneeEditBtn = new System.Windows.Forms.Button();
+            this.priorityEditBtn = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.summaryEditBtn = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.tabDescriptionAndComments = new System.Windows.Forms.TabPage();
             this.splitContainer = new System.Windows.Forms.SplitContainer();
             this.toolStripContainer2 = new System.Windows.Forms.ToolStripContainer();
@@ -54,7 +77,7 @@ namespace Atlassian.plvs.ui.jira {
             this.tabAttachments = new System.Windows.Forms.TabPage();
             this.splitContainerAttachments = new System.Windows.Forms.SplitContainer();
             this.toolStripContainer3 = new System.Windows.Forms.ToolStripContainer();
-            this.listViewAttachments = new AutosizeListView();
+            this.listViewAttachments = new plvs.ui.AutosizeListView();
             this.columnName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnAuthor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnSize = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -79,6 +102,7 @@ namespace Atlassian.plvs.ui.jira {
             this.issueTabs.SuspendLayout();
             this.tabSummary.SuspendLayout();
             this.tabDescriptionAndComments.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel2.SuspendLayout();
             this.splitContainer.SuspendLayout();
             this.toolStripContainer2.ContentPanel.SuspendLayout();
@@ -88,6 +112,7 @@ namespace Atlassian.plvs.ui.jira {
             this.tabLinks.SuspendLayout();
             this.tabSubtasks.SuspendLayout();
             this.tabAttachments.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerAttachments)).BeginInit();
             this.splitContainerAttachments.Panel1.SuspendLayout();
             this.splitContainerAttachments.SuspendLayout();
             this.toolStripContainer3.ContentPanel.SuspendLayout();
@@ -133,7 +158,7 @@ namespace Atlassian.plvs.ui.jira {
             // jiraStatus
             // 
             this.jiraStatus.Name = "jiraStatus";
-            this.jiraStatus.Size = new System.Drawing.Size(38, 17);
+            this.jiraStatus.Size = new System.Drawing.Size(37, 17);
             this.jiraStatus.Text = "status";
             // 
             // issueTabs
@@ -152,27 +177,308 @@ namespace Atlassian.plvs.ui.jira {
             // 
             // tabSummary
             // 
-            this.tabSummary.Controls.Add(this.issueSummary);
+            this.tabSummary.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tabSummary.Controls.Add(this.updatedText);
+            this.tabSummary.Controls.Add(this.createdText);
+            this.tabSummary.Controls.Add(this.resolutionText);
+            this.tabSummary.Controls.Add(this.reporterText);
+            this.tabSummary.Controls.Add(this.assigneeText);
+            this.tabSummary.Controls.Add(this.componentText);
+            this.tabSummary.Controls.Add(this.priorityText);
+            this.tabSummary.Controls.Add(this.statusText);
+            this.tabSummary.Controls.Add(this.typeText);
+            this.tabSummary.Controls.Add(this.summaryText);
+            this.tabSummary.Controls.Add(this.button4);
+            this.tabSummary.Controls.Add(this.assigneeEditBtn);
+            this.tabSummary.Controls.Add(this.priorityEditBtn);
+            this.tabSummary.Controls.Add(this.label11);
+            this.tabSummary.Controls.Add(this.summaryEditBtn);
+            this.tabSummary.Controls.Add(this.label10);
+            this.tabSummary.Controls.Add(this.label9);
+            this.tabSummary.Controls.Add(this.label8);
+            this.tabSummary.Controls.Add(this.label7);
+            this.tabSummary.Controls.Add(this.label6);
+            this.tabSummary.Controls.Add(this.label5);
+            this.tabSummary.Controls.Add(this.label4);
+            this.tabSummary.Controls.Add(this.label3);
+            this.tabSummary.Controls.Add(this.label2);
             this.tabSummary.Location = new System.Drawing.Point(4, 22);
             this.tabSummary.Name = "tabSummary";
             this.tabSummary.Padding = new System.Windows.Forms.Padding(3);
             this.tabSummary.Size = new System.Drawing.Size(777, 402);
             this.tabSummary.TabIndex = 0;
             this.tabSummary.Text = "Summary";
-            this.tabSummary.UseVisualStyleBackColor = true;
             // 
-            // issueSummary
+            // updatedText
             // 
-            this.issueSummary.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.issueSummary.IsWebBrowserContextMenuEnabled = false;
-            this.issueSummary.Location = new System.Drawing.Point(3, 3);
-            this.issueSummary.MinimumSize = new System.Drawing.Size(20, 20);
-            this.issueSummary.Name = "issueSummary";
-            this.issueSummary.Size = new System.Drawing.Size(771, 396);
-            this.issueSummary.TabIndex = 0;
-            this.issueSummary.WebBrowserShortcutsEnabled = false;
-            this.issueSummary.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.issueSummary_DocumentCompleted);
-            this.issueSummary.Navigating += new System.Windows.Forms.WebBrowserNavigatingEventHandler(this.issueSummary_Navigating);
+            this.updatedText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.updatedText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.updatedText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updatedText.Location = new System.Drawing.Point(169, 296);
+            this.updatedText.Name = "updatedText";
+            this.updatedText.Size = new System.Drawing.Size(163, 16);
+            this.updatedText.TabIndex = 23;
+            // 
+            // createdText
+            // 
+            this.createdText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.createdText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.createdText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createdText.Location = new System.Drawing.Point(169, 268);
+            this.createdText.Name = "createdText";
+            this.createdText.Size = new System.Drawing.Size(163, 16);
+            this.createdText.TabIndex = 22;
+            // 
+            // resolutionText
+            // 
+            this.resolutionText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.resolutionText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.resolutionText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resolutionText.Location = new System.Drawing.Point(169, 240);
+            this.resolutionText.Name = "resolutionText";
+            this.resolutionText.Size = new System.Drawing.Size(507, 16);
+            this.resolutionText.TabIndex = 21;
+            // 
+            // reporterText
+            // 
+            this.reporterText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.reporterText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.reporterText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reporterText.Location = new System.Drawing.Point(169, 212);
+            this.reporterText.Name = "reporterText";
+            this.reporterText.Size = new System.Drawing.Size(507, 16);
+            this.reporterText.TabIndex = 20;
+            // 
+            // assigneeText
+            // 
+            this.assigneeText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.assigneeText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.assigneeText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.assigneeText.Location = new System.Drawing.Point(169, 184);
+            this.assigneeText.Name = "assigneeText";
+            this.assigneeText.Size = new System.Drawing.Size(507, 16);
+            this.assigneeText.TabIndex = 19;
+            // 
+            // componentText
+            // 
+            this.componentText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.componentText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.componentText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.componentText.Location = new System.Drawing.Point(169, 156);
+            this.componentText.Name = "componentText";
+            this.componentText.Size = new System.Drawing.Size(507, 16);
+            this.componentText.TabIndex = 18;
+            // 
+            // priorityText
+            // 
+            this.priorityText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.priorityText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.priorityText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.priorityText.Location = new System.Drawing.Point(169, 128);
+            this.priorityText.Name = "priorityText";
+            this.priorityText.Size = new System.Drawing.Size(507, 16);
+            this.priorityText.TabIndex = 17;
+            // 
+            // statusText
+            // 
+            this.statusText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.statusText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.statusText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusText.Location = new System.Drawing.Point(169, 100);
+            this.statusText.Name = "statusText";
+            this.statusText.Size = new System.Drawing.Size(507, 16);
+            this.statusText.TabIndex = 16;
+            // 
+            // typeText
+            // 
+            this.typeText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.typeText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.typeText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.typeText.Location = new System.Drawing.Point(169, 75);
+            this.typeText.Name = "typeText";
+            this.typeText.Size = new System.Drawing.Size(507, 16);
+            this.typeText.TabIndex = 15;
+            // 
+            // summaryText
+            // 
+            this.summaryText.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.summaryText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.summaryText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.summaryText.Location = new System.Drawing.Point(169, 21);
+            this.summaryText.Multiline = true;
+            this.summaryText.Name = "summaryText";
+            this.summaryText.Size = new System.Drawing.Size(507, 42);
+            this.summaryText.TabIndex = 14;
+            // 
+            // button4
+            // 
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button4.Image = global::Atlassian.plvs.Resources.edit;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.button4.Location = new System.Drawing.Point(137, 149);
+            this.button4.Margin = new System.Windows.Forms.Padding(0);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(28, 29);
+            this.button4.TabIndex = 13;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // assigneeEditBtn
+            // 
+            this.assigneeEditBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.assigneeEditBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.assigneeEditBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.assigneeEditBtn.Image = global::Atlassian.plvs.Resources.edit;
+            this.assigneeEditBtn.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.assigneeEditBtn.Location = new System.Drawing.Point(137, 177);
+            this.assigneeEditBtn.Margin = new System.Windows.Forms.Padding(0);
+            this.assigneeEditBtn.Name = "assigneeEditBtn";
+            this.assigneeEditBtn.Size = new System.Drawing.Size(28, 29);
+            this.assigneeEditBtn.TabIndex = 12;
+            this.assigneeEditBtn.UseVisualStyleBackColor = true;
+            this.assigneeEditBtn.Click += new System.EventHandler(this.assigneeEditBtn_Click);
+            // 
+            // priorityEditBtn
+            // 
+            this.priorityEditBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.priorityEditBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.priorityEditBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.priorityEditBtn.Image = global::Atlassian.plvs.Resources.edit;
+            this.priorityEditBtn.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.priorityEditBtn.Location = new System.Drawing.Point(137, 121);
+            this.priorityEditBtn.Margin = new System.Windows.Forms.Padding(0);
+            this.priorityEditBtn.Name = "priorityEditBtn";
+            this.priorityEditBtn.Size = new System.Drawing.Size(28, 29);
+            this.priorityEditBtn.TabIndex = 11;
+            this.priorityEditBtn.UseVisualStyleBackColor = true;
+            this.priorityEditBtn.Click += new System.EventHandler(this.priorityEditBtn_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(7, 155);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(89, 17);
+            this.label11.TabIndex = 10;
+            this.label11.Text = "Component";
+            // 
+            // summaryEditBtn
+            // 
+            this.summaryEditBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.summaryEditBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.summaryEditBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.summaryEditBtn.Image = global::Atlassian.plvs.Resources.edit;
+            this.summaryEditBtn.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.summaryEditBtn.Location = new System.Drawing.Point(137, 15);
+            this.summaryEditBtn.Margin = new System.Windows.Forms.Padding(0);
+            this.summaryEditBtn.Name = "summaryEditBtn";
+            this.summaryEditBtn.Size = new System.Drawing.Size(28, 29);
+            this.summaryEditBtn.TabIndex = 9;
+            this.summaryEditBtn.UseVisualStyleBackColor = true;
+            this.summaryEditBtn.Click += new System.EventHandler(this.summaryEditBtn_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(7, 239);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(85, 17);
+            this.label10.TabIndex = 8;
+            this.label10.Text = "Resolution";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(7, 295);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(69, 17);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "Updated";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(7, 267);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(65, 17);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "Created";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(7, 211);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(72, 17);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "Reporter";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(7, 183);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(74, 17);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Assignee";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(7, 127);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(60, 17);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Priority";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(7, 99);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(54, 17);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Status";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(7, 71);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(44, 17);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Type";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(7, 21);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(74, 17);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Summary";
             // 
             // tabDescriptionAndComments
             // 
@@ -240,13 +546,13 @@ namespace Atlassian.plvs.ui.jira {
             this.buttonCollapseAll});
             this.toolStrip2.Location = new System.Drawing.Point(3, 0);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(138, 25);
+            this.toolStrip2.Size = new System.Drawing.Size(129, 25);
             this.toolStrip2.TabIndex = 0;
             // 
             // toolStripLabel1
             // 
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(66, 22);
+            this.toolStripLabel1.Size = new System.Drawing.Size(57, 22);
             this.toolStripLabel1.Text = "Comments";
             // 
             // buttonAddComment
@@ -426,7 +732,7 @@ namespace Atlassian.plvs.ui.jira {
             this.buttonPaste});
             this.toolStripAttachmentsMenu.Location = new System.Drawing.Point(3, 0);
             this.toolStripAttachmentsMenu.Name = "toolStripAttachmentsMenu";
-            this.toolStripAttachmentsMenu.Size = new System.Drawing.Size(187, 25);
+            this.toolStripAttachmentsMenu.Size = new System.Drawing.Size(183, 25);
             this.toolStripAttachmentsMenu.TabIndex = 0;
             // 
             // buttonSaveAttachmentAs
@@ -434,7 +740,7 @@ namespace Atlassian.plvs.ui.jira {
             this.buttonSaveAttachmentAs.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.buttonSaveAttachmentAs.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.buttonSaveAttachmentAs.Name = "buttonSaveAttachmentAs";
-            this.buttonSaveAttachmentAs.Size = new System.Drawing.Size(60, 22);
+            this.buttonSaveAttachmentAs.Size = new System.Drawing.Size(62, 22);
             this.buttonSaveAttachmentAs.Text = "Save As...";
             this.buttonSaveAttachmentAs.Click += new System.EventHandler(this.saveAttachment);
             // 
@@ -443,7 +749,7 @@ namespace Atlassian.plvs.ui.jira {
             this.buttonUploadNew.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.buttonUploadNew.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.buttonUploadNew.Name = "buttonUploadNew";
-            this.buttonUploadNew.Size = new System.Drawing.Size(85, 22);
+            this.buttonUploadNew.Size = new System.Drawing.Size(80, 22);
             this.buttonUploadNew.Text = "Upload New...";
             this.buttonUploadNew.Click += new System.EventHandler(this.uploadAttachment);
             // 
@@ -453,7 +759,7 @@ namespace Atlassian.plvs.ui.jira {
             this.buttonPaste.Image = ((System.Drawing.Image)(resources.GetObject("buttonPaste.Image")));
             this.buttonPaste.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.buttonPaste.Name = "buttonPaste";
-            this.buttonPaste.Size = new System.Drawing.Size(39, 22);
+            this.buttonPaste.Size = new System.Drawing.Size(38, 22);
             this.buttonPaste.Text = "Paste";
             this.buttonPaste.Click += new System.EventHandler(this.buttonPasteClick);
             // 
@@ -553,8 +859,10 @@ namespace Atlassian.plvs.ui.jira {
             this.statusStrip.PerformLayout();
             this.issueTabs.ResumeLayout(false);
             this.tabSummary.ResumeLayout(false);
+            this.tabSummary.PerformLayout();
             this.tabDescriptionAndComments.ResumeLayout(false);
             this.splitContainer.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).EndInit();
             this.splitContainer.ResumeLayout(false);
             this.toolStripContainer2.ContentPanel.ResumeLayout(false);
             this.toolStripContainer2.TopToolStripPanel.ResumeLayout(false);
@@ -567,6 +875,7 @@ namespace Atlassian.plvs.ui.jira {
             this.tabSubtasks.ResumeLayout(false);
             this.tabAttachments.ResumeLayout(false);
             this.splitContainerAttachments.Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerAttachments)).EndInit();
             this.splitContainerAttachments.ResumeLayout(false);
             this.toolStripContainer3.ContentPanel.ResumeLayout(false);
             this.toolStripContainer3.TopToolStripPanel.ResumeLayout(false);
@@ -594,7 +903,6 @@ namespace Atlassian.plvs.ui.jira {
         private System.Windows.Forms.ToolStripContainer toolStripContainer2;
         private System.Windows.Forms.WebBrowser issueComments;
         private System.Windows.Forms.ToolStrip toolStrip2;
-        private System.Windows.Forms.WebBrowser issueSummary;
         private System.Windows.Forms.ToolStripButton buttonAddComment;
         private System.Windows.Forms.ToolStripButton buttonExpandAll;
         private System.Windows.Forms.ToolStripButton buttonCollapseAll;
@@ -622,5 +930,29 @@ namespace Atlassian.plvs.ui.jira {
         private System.Windows.Forms.WebBrowser webLinkedIssues;
         private System.Windows.Forms.ToolStripButton buttonStartStopProgress;
         private System.Windows.Forms.ToolStripButton buttonPaste;
+        private System.Windows.Forms.Button summaryEditBtn;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox summaryText;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button assigneeEditBtn;
+        private System.Windows.Forms.Button priorityEditBtn;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox priorityText;
+        private System.Windows.Forms.TextBox statusText;
+        private System.Windows.Forms.TextBox typeText;
+        private System.Windows.Forms.TextBox assigneeText;
+        private System.Windows.Forms.TextBox componentText;
+        private System.Windows.Forms.TextBox updatedText;
+        private System.Windows.Forms.TextBox createdText;
+        private System.Windows.Forms.TextBox resolutionText;
+        private System.Windows.Forms.TextBox reporterText;
     }
 }

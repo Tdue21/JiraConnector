@@ -116,7 +116,7 @@ namespace Atlassian.plvs.ui.jira {
             buttonUploadNew.Image = Resources.icon_addattachment;
             buttonUploadNew.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText;
 
-            issueSummary.ScriptErrorsSuppressed = true;
+            //issueSummary.ScriptErrorsSuppressed = true;
 
             reinitializeAttachmentView(null);
 
@@ -484,7 +484,21 @@ namespace Atlassian.plvs.ui.jira {
 
         private void rebuildSummaryPanel() {
             issueSummaryLoaded = false;
-            issueSummary.DocumentText = createSummaryHtml();
+            summaryText.Text = issue.Summary;
+            typeText.Text = issue.IssueType;
+            statusText.Text = issue.Status;
+            priorityText.Text = issue.Priority;
+            if(issue.Components.Count>0)
+                componentText.Text = issue.Components[0];
+
+            assigneeText.Text = issue.Assignee;
+            reporterText.Text = issue.Reporter;
+            resolutionText.Text = issue.Resolution;
+
+            createdText.Text = issue.CreationDate.ToLongDateString();
+            updatedText.Text = issue.UpdateDate.ToLongDateString();
+
+            //issueSummary.DocumentText = createSummaryHtml();
         }
 
         private void rebuildCommentsPanel(bool expanded) {
@@ -1221,6 +1235,30 @@ namespace Atlassian.plvs.ui.jira {
                     PlvsUtils.showError("Unable to open attachment", e);
                 }
             });
+        }
+
+        private void priorityEditBtn_Click(object sender, EventArgs e)
+        {
+            FieldEditor editor = new FieldEditor("Edit Priority", model, facade, issue, "priority", this, ((Button)sender).Location);
+            editor.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            FieldEditor editor = new FieldEditor("Set Component", model, facade, issue, "components", this, ((Button)sender).Location);
+            editor.ShowDialog();
+        }
+
+        private void assigneeEditBtn_Click(object sender, EventArgs e)
+        {
+            FieldEditor editor = new FieldEditor("Edit Assignee", model, facade, issue, "assignee", this, ((Button)sender).Location);
+            editor.ShowDialog();
+        }
+
+        private void summaryEditBtn_Click(object sender, EventArgs e)
+        {
+            FieldEditor editor = new FieldEditor("Edit Summary", model, facade, issue, "summary", this, ((Button)sender).Location);
+            editor.ShowDialog(); 
         }
     }
 }
