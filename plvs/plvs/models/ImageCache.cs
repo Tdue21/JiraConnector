@@ -8,6 +8,8 @@ using System.Security.Cryptography;
 using System.Text;
 using Atlassian.plvs.api;
 using Atlassian.plvs.util;
+using Atlassian.plvs.api.jira;
+using System.Resources;
 
 namespace Atlassian.plvs.models {
     internal class ImageCache {
@@ -72,6 +74,8 @@ namespace Atlassian.plvs.models {
             }
         }
 
+        
+
         private static HttpWebResponse getResponse(Server server, string url) {
             string authUrl = server == null ? url : url + "&" + CredentialUtils.getOsAuthString(server);
 
@@ -98,6 +102,64 @@ namespace Atlassian.plvs.models {
         private static string getFileName(string url) {
             byte[] hash = new MD5CryptoServiceProvider().ComputeHash(Encoding.ASCII.GetBytes(url));
             return Convert.ToBase64String(hash).Replace("/", "-");
+        }
+
+        public Image GetPriorityImage(JiraIssue Issue)
+        {
+            ResourceManager rm = Resources.ResourceManager;
+            Image retImage = (Bitmap)rm.GetObject("pin_other"); ;
+            switch (Issue.Priority)
+            {
+                case "Highest":
+                    retImage = (Bitmap)rm.GetObject("PriorityHighest");
+                    break;
+                case "High":
+                    retImage = (Bitmap)rm.GetObject("PriorityHigh");
+                    break;
+                case "Medium":
+                    retImage = (Bitmap)rm.GetObject("PriorityMedium");
+                    break;
+                case "Low":
+                    retImage = (Bitmap)rm.GetObject("PriorityLow");
+                    break;
+                case "Lowest":
+                    retImage = (Bitmap)rm.GetObject("PriorityLowest");
+                    break;
+
+
+            }
+
+
+            return retImage;
+        }
+
+        public Image GetTypeImage(JiraIssue Issue)
+        {
+            ResourceManager rm = Resources.ResourceManager;
+            Image retImage = (Bitmap)rm.GetObject("pin_other"); 
+            switch (Issue.IssueType)
+            {
+                case "Bug":
+                    retImage = (Bitmap)rm.GetObject("IssueTypeBug");
+                    break;
+                case "Epic":
+                    retImage = (Bitmap)rm.GetObject("IssueTypeEpic");
+                    break;
+                case "Story":
+                    retImage = (Bitmap)rm.GetObject("IssueTypeStory");
+                    break;
+                case "Task":
+                    retImage = (Bitmap)rm.GetObject("IssueTypeTask");
+                    break;
+                case "Subtask":
+                    retImage = (Bitmap)rm.GetObject("IssueTypeSubtask");
+                    break;
+
+
+            }
+
+
+            return retImage;
         }
     }
 }

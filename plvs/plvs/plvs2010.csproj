@@ -1018,6 +1018,11 @@
     </Content>
     <None Include="Resources\icons\ide_plugin_321.ico" />
     <Content Include="Resources\icons\Images.bmp" />
+    <Content Include="Resources\icons\IssueTypeBug.png" />
+    <Content Include="Resources\icons\IssueTypeEpic.png" />
+    <Content Include="Resources\icons\IssueTypeStory.png" />
+    <Content Include="Resources\icons\IssueTypeSubtask.png" />
+    <Content Include="Resources\icons\IssueTypeTask.png" />
     <Content Include="Resources\icons\jira-blue-16-with-padding.png" />
     <Content Include="Resources\icons\jira-blue-16.ico" />
     <Content Include="Resources\icons\jira-blue-16.png" />
@@ -1034,6 +1039,11 @@
     <None Include="Resources\icons\pazu_321.ico" />
     <Content Include="Resources\icons\pin_other.png" />
     <Content Include="Resources\icons\plus.png" />
+    <Content Include="Resources\icons\PriorityHigh.png" />
+    <Content Include="Resources\icons\PriorityHighest.png" />
+    <Content Include="Resources\icons\PriorityLow.png" />
+    <Content Include="Resources\icons\PriorityLowest.png" />
+    <Content Include="Resources\icons\PriorityMedium.png" />
     <Content Include="Resources\icons\projectsettings.png" />
     <Content Include="Resources\icons\refresh.png" />
     <Content Include="Resources\icons\run-build.png" />

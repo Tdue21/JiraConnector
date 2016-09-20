@@ -421,4 +421,37 @@
   <data name="scrum16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\icons\scrum16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="IssueTypeBug" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\icons\IssueTypeBug.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IssueTypeEpic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\icons\IssueTypeEpic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IssueTypeStory" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\icons\IssueTypeStory.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IssueTypeSubtask" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\icons\IssueTypeSubtask.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IssueTypeTask" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\icons\IssueTypeTask.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PriorityHigh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\icons\PriorityHigh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PriorityHighest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\icons\PriorityHighest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PriorityLow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\icons\PriorityLow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PriorityLowest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\icons\PriorityLowest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PriorityMedium" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\icons\PriorityMedium.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PriorityMedium1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\icons\PriorityMedium.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
