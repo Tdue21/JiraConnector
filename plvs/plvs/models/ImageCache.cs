@@ -151,7 +151,7 @@ namespace Atlassian.plvs.models {
                 case "Task":
                     retImage = (Bitmap)rm.GetObject("IssueTypeTask");
                     break;
-                case "Subtask":
+                case "Sub-task":
                     retImage = (Bitmap)rm.GetObject("IssueTypeSubtask");
                     break;
 

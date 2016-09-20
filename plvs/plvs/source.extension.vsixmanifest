@@ -2,12 +2,12 @@
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
     <Identity Id="36fa5f7f-2b5d-4cec-8c06-10c483683a16" Version="1.0" Language="en-US" Publisher="Atlassian" />
-    <DisplayName>Atlassian Connector</DisplayName>
-    <Description>Provides integration of Atlassian products with Visual Studio</Description>
+    <DisplayName>JIRA Plugin</DisplayName>
+    <Description xml:space="preserve">Atlassian JIRA integration with Visual Studio</Description>
     <MoreInfo>https://bitbucket.org/atlassian/connector-vs</MoreInfo>
     <License>LICENSE.txt</License>
-    <Icon>ide_plugin_32.ico</Icon>
-    <PreviewImage>ide_plugin_300.png</PreviewImage>
+    <Icon>Resources\icons\ide_plugin_300.png</Icon>
+    <PreviewImage>Resources\icons\ide_plugin_300.png</PreviewImage>
     <Tags>atlassian connector jira</Tags>
   </Metadata>
   <Installation>
