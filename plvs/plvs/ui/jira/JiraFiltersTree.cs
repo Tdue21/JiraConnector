@@ -201,8 +201,8 @@ namespace Atlassian.plvs.ui.jira {
             presetFiltersGroupTreeNode.ContextMenuStrip = new PresetFilterGroupContextMenu(presetFiltersGroupTreeNode,
                                                                                            setAllPresetFiltersProject,
                                                                                            clearAllPresetFiltersProject);
-            //node.Nodes.Add(presetFiltersGroupTreeNode);
-            //node.Nodes.Add(new JiraSavedFiltersGroupTreeNode(server, 2));
+            node.Nodes.Add(presetFiltersGroupTreeNode);
+            node.Nodes.Add(new JiraSavedFiltersGroupTreeNode(server, 2));
             JiraCustomFiltersGroupTreeNode customFiltersGroupTreeNode = new JiraCustomFiltersGroupTreeNode(server, 3);
             customFiltersGroupTreeNode.ContextMenuStrip = new CustomFilterGroupContextMenu(customFiltersGroupTreeNode, addCustomFilter);
             node.Nodes.Add(customFiltersGroupTreeNode);

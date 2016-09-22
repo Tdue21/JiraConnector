@@ -1040,10 +1040,15 @@
     <Content Include="Resources\icons\pin_other.png" />
     <Content Include="Resources\icons\plus.png" />
     <Content Include="Resources\icons\PriorityHigh.png" />
+    <None Include="Resources\icons\PriorityHigh1.png" />
+    <None Include="Resources\icons\PriorityHigh2.png" />
     <Content Include="Resources\icons\PriorityHighest.png" />
     <Content Include="Resources\icons\PriorityLow.png" />
+    <None Include="Resources\icons\PriorityLow1.png" />
     <Content Include="Resources\icons\PriorityLowest.png" />
+    <None Include="Resources\icons\PriorityLowest1.png" />
     <Content Include="Resources\icons\PriorityMedium.png" />
+    <None Include="Resources\icons\PriorityMedium1.png" />
     <Content Include="Resources\icons\projectsettings.png" />
     <Content Include="Resources\icons\refresh.png" />
     <Content Include="Resources\icons\run-build.png" />

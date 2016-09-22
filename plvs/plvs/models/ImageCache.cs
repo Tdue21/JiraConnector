@@ -107,7 +107,7 @@ namespace Atlassian.plvs.models {
         public Image GetPriorityImage(JiraIssue Issue)
         {
             ResourceManager rm = Resources.ResourceManager;
-            Image retImage = (Bitmap)rm.GetObject("pin_other"); ;
+            Image retImage = (Bitmap)rm.GetObject("pin_other");  // this is the default icon if we don't know
             switch (Issue.Priority)
             {
                 case "Highest":
@@ -136,7 +136,7 @@ namespace Atlassian.plvs.models {
         public Image GetTypeImage(JiraIssue Issue)
         {
             ResourceManager rm = Resources.ResourceManager;
-            Image retImage = (Bitmap)rm.GetObject("pin_other"); 
+            Image retImage = (Bitmap)rm.GetObject("pin_other"); // this is the default icon if we don't know
             switch (Issue.IssueType)
             {
                 case "Bug":

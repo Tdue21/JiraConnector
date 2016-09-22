@@ -630,10 +630,10 @@ namespace Atlassian.plvs.ui.jira {
                                                      }
                                                      PlvsLogger.log("reloadKnownServersWorker() - populating filter nodes");
                                                      if (supportsGh) {
-                                                         //filtersTree.addGhNodes(jiraServer);
+                                                         filtersTree.addGhNodes(jiraServer);
                                                      }
                                                      filtersTree.addFilterGroupNodes(jiraServer);
-                                                     //filtersTree.addPresetFilterNodes(jiraServer);
+                                                     filtersTree.addPresetFilterNodes(jiraServer);
                                                      filtersTree.addSavedFilterNodes(jiraServer, filters);
                                                      PlvsLogger.log("reloadKnownServersWorker() - populated filter nodes");
                                                      status.setInfo("Loaded saved filters for server " + jiraServer.Name);

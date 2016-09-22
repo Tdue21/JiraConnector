@@ -999,6 +999,16 @@ namespace Atlassian.plvs {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap PriorityHighest2 {
+            get {
+                object obj = ResourceManager.GetObject("PriorityHighest2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap PriorityLow {
             get {
                 object obj = ResourceManager.GetObject("PriorityLow", resourceCulture);
@@ -1019,9 +1029,39 @@ namespace Atlassian.plvs {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap PriorityLowest2 {
+            get {
+                object obj = ResourceManager.GetObject("PriorityLowest2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PriorityLowest3 {
+            get {
+                object obj = ResourceManager.GetObject("PriorityLowest3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap PriorityMedium {
             get {
                 object obj = ResourceManager.GetObject("PriorityMedium", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PriorityMedium2 {
+            get {
+                object obj = ResourceManager.GetObject("PriorityMedium2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
