@@ -60,7 +60,7 @@ namespace Atlassian.plvs.dialogs {
             serverTree.ImageList = imageList;
 
             serverTree.Nodes.Add(jiraRoot);
-            serverTree.Nodes.Add(bambooRoot);
+            //serverTree.Nodes.Add(bambooRoot);
 //            serverTree.Nodes.Add(crucibleRoot);
 //            serverTree.Nodes.Add(fisheyeRoot);
 

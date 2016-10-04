@@ -43,12 +43,15 @@
             this.checkDontUseProxy = new System.Windows.Forms.CheckBox();
             this.checkShared = new System.Windows.Forms.CheckBox();
             this.checkUseOldskoolAuth = new System.Windows.Forms.CheckBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.projectAffinityCmb = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonCancel
             // 
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonCancel.Location = new System.Drawing.Point(377, 226);
+            this.buttonCancel.Location = new System.Drawing.Point(377, 269);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonCancel.TabIndex = 9;
@@ -57,7 +60,7 @@
             // 
             // buttonAddOrEdit
             // 
-            this.buttonAddOrEdit.Location = new System.Drawing.Point(296, 226);
+            this.buttonAddOrEdit.Location = new System.Drawing.Point(296, 269);
             this.buttonAddOrEdit.Name = "buttonAddOrEdit";
             this.buttonAddOrEdit.Size = new System.Drawing.Size(75, 23);
             this.buttonAddOrEdit.TabIndex = 8;
@@ -77,7 +80,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 170);
+            this.label2.Location = new System.Drawing.Point(29, 213);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 3;
@@ -86,7 +89,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 144);
+            this.label3.Location = new System.Drawing.Point(22, 187);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 13);
             this.label3.TabIndex = 4;
@@ -95,7 +98,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 95);
+            this.label4.Location = new System.Drawing.Point(19, 138);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(63, 13);
             this.label4.TabIndex = 5;
@@ -111,7 +114,7 @@
             // 
             // url
             // 
-            this.url.Location = new System.Drawing.Point(97, 92);
+            this.url.Location = new System.Drawing.Point(97, 135);
             this.url.Name = "url";
             this.url.Size = new System.Drawing.Size(355, 20);
             this.url.TabIndex = 3;
@@ -119,7 +122,7 @@
             // 
             // user
             // 
-            this.user.Location = new System.Drawing.Point(97, 141);
+            this.user.Location = new System.Drawing.Point(97, 184);
             this.user.Name = "user";
             this.user.Size = new System.Drawing.Size(355, 20);
             this.user.TabIndex = 5;
@@ -127,7 +130,7 @@
             // 
             // password
             // 
-            this.password.Location = new System.Drawing.Point(97, 167);
+            this.password.Location = new System.Drawing.Point(97, 210);
             this.password.Name = "password";
             this.password.PasswordChar = '*';
             this.password.Size = new System.Drawing.Size(355, 20);
@@ -146,7 +149,7 @@
             // 
             // buttonTestConnection
             // 
-            this.buttonTestConnection.Location = new System.Drawing.Point(97, 226);
+            this.buttonTestConnection.Location = new System.Drawing.Point(97, 269);
             this.buttonTestConnection.Name = "buttonTestConnection";
             this.buttonTestConnection.Size = new System.Drawing.Size(112, 23);
             this.buttonTestConnection.TabIndex = 7;
@@ -157,7 +160,7 @@
             // checkDontUseProxy
             // 
             this.checkDontUseProxy.AutoSize = true;
-            this.checkDontUseProxy.Location = new System.Drawing.Point(97, 118);
+            this.checkDontUseProxy.Location = new System.Drawing.Point(97, 161);
             this.checkDontUseProxy.Name = "checkDontUseProxy";
             this.checkDontUseProxy.Size = new System.Drawing.Size(111, 17);
             this.checkDontUseProxy.TabIndex = 4;
@@ -179,7 +182,7 @@
             // checkUseOldskoolAuth
             // 
             this.checkUseOldskoolAuth.AutoSize = true;
-            this.checkUseOldskoolAuth.Location = new System.Drawing.Point(97, 193);
+            this.checkUseOldskoolAuth.Location = new System.Drawing.Point(97, 236);
             this.checkUseOldskoolAuth.Name = "checkUseOldskoolAuth";
             this.checkUseOldskoolAuth.Size = new System.Drawing.Size(194, 17);
             this.checkUseOldskoolAuth.TabIndex = 10;
@@ -187,11 +190,41 @@
             this.checkUseOldskoolAuth.UseVisualStyleBackColor = true;
             this.checkUseOldskoolAuth.CheckedChanged += new System.EventHandler(this.checkUseOldskoolAuth_CheckedChanged);
             // 
+            // label5
+            // 
+            this.label5.Location = new System.Drawing.Point(13, 99);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(69, 30);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Project only issues";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // projectAffinityCmb
+            // 
+            this.projectAffinityCmb.FormattingEnabled = true;
+            this.projectAffinityCmb.Location = new System.Drawing.Point(97, 99);
+            this.projectAffinityCmb.Name = "projectAffinityCmb";
+            this.projectAffinityCmb.Size = new System.Drawing.Size(194, 21);
+            this.projectAffinityCmb.TabIndex = 13;
+            this.projectAffinityCmb.SelectedIndexChanged += new System.EventHandler(this.projectAffinityCmb_SelectedIndexChanged);
+            // 
+            // label6
+            // 
+            this.label6.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.label6.Location = new System.Drawing.Point(297, 88);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(146, 41);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "You must successfully test the connection beore this list is populated";
+            // 
             // AddOrEditJiraServer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(464, 261);
+            this.ClientSize = new System.Drawing.Size(464, 304);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.projectAffinityCmb);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.checkUseOldskoolAuth);
             this.Controls.Add(this.checkShared);
             this.Controls.Add(this.checkDontUseProxy);
@@ -237,5 +270,8 @@
         private System.Windows.Forms.CheckBox checkDontUseProxy;
         private System.Windows.Forms.CheckBox checkShared;
         private System.Windows.Forms.CheckBox checkUseOldskoolAuth;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox projectAffinityCmb;
+        private System.Windows.Forms.Label label6;
     }
 }

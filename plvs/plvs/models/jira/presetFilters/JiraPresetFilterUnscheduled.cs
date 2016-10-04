@@ -8,11 +8,12 @@ namespace Atlassian.plvs.models.jira.presetFilters {
         #region Overrides of JiraPresetFilter
 
         public override string getFilterQueryStringNoProject() {
+
             return "resolution=-1&fixfor=-1";
         }
 
         public override string getJqlNoProject() {
-            return "resolution = Unresolved and fixVersion is EMPTY";
+            return "resolution = Unresolved and fixVersion is EMPTY" ;
         }
 
         public override string getSortBy() {

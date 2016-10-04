@@ -33,6 +33,8 @@ namespace Atlassian.plvs.dialogs.jira {
                     checkShared.Checked = server.IsShared;
                     checkDontUseProxy.Checked = server.NoProxy;
                     checkUseOldskoolAuth.Checked = server.OldSkoolAuth;
+                    if(server.ProjectAffinity != null)
+                        projectAffinityCmb.Text = server.ProjectAffinity.ToString();
                 }
             }
             else {
@@ -110,9 +112,21 @@ namespace Atlassian.plvs.dialogs.jira {
             checkIfValid();
         }
 
-        private void buttonTestConnection_Click(object sender, EventArgs e) {
+        private void buttonTestConnection_Click(object sender, EventArgs e)
+        {
             fillServerData();
             new TestJiraConnection(facade, server).ShowDialog();
+            var projects = facade.getProjects(server);
+
+            if (!server.IsShared)
+            {
+                projectAffinityCmb.Items.Clear();
+                projectAffinityCmb.Items.Add("None");
+                foreach (JiraProject p in projects)
+                {
+                    projectAffinityCmb.Items.Add(p);
+                }
+            }
         }
 
         private void checkDontUseProxy_CheckedChanged(object sender, EventArgs e) {
@@ -121,10 +135,29 @@ namespace Atlassian.plvs.dialogs.jira {
 
         private void checkShared_CheckedChanged(object sender, EventArgs e) {
             checkIfValid();
+            if (checkShared.Checked)
+            {
+                server.ProjectAffinity = null;
+                projectAffinityCmb.Enabled = false;
+            }
+            else
+            {
+                projectAffinityCmb.Enabled = true;
+            }
         }
 
         private void checkUseOldskoolAuth_CheckedChanged(object sender, EventArgs e) {
             checkIfValid();
+        }
+
+        private void projectAffinityCmb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (projectAffinityCmb.Text == "None")
+            {
+                server.ProjectAffinity = null;
+                return;
+            }
+            server.ProjectAffinity = (JiraProject)projectAffinityCmb.SelectedItem;
         }
     }
 }

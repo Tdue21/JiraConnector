@@ -58,6 +58,10 @@ namespace Atlassian.plvs.models.jira {
                     break;
                 }
             }
+
+            if (project == null && server.ProjectAffinity != null) // if no one has set anything to override the project property and we have an affinaty from the 
+                project = server.ProjectAffinity;                  // server settings then use that here
+
             setNameAndProject();
         }
 

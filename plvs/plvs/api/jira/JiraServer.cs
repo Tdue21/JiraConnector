@@ -7,6 +7,7 @@ namespace Atlassian.plvs.api.jira {
         public int BuildNumber { get; set; }
         public string Version { get; set; }
         public string ServerTitle { get; set; }
+        public JiraProject ProjectAffinity { get; set; }
 
         public bool OldSkoolAuth { get; set; }
 

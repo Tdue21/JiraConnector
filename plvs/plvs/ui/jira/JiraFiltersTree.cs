@@ -144,6 +144,8 @@ namespace Atlassian.plvs.ui.jira {
         }
 
         public void addSavedFilterNodes(JiraServer server, IEnumerable<JiraSavedFilter> filters) {
+            if (server.ProjectAffinity != null)
+                return; // we don't want to pull web site filters if we are working at the project level
             TreeNodeWithJiraServer node = findGroupNode(server, typeof(JiraSavedFiltersGroupTreeNode));
             if (node == null) {
                 return;
