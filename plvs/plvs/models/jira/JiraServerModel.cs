@@ -7,6 +7,7 @@ namespace Atlassian.plvs.models.jira {
     public class JiraServerModel : AbstractServerModel<JiraServer> {
 
         private const string USE_OLDSKOOL_AUTH = "UseOldSkoolAuth";
+        private const string PROJ_AFFINITY_ID = "ProjectAffinityID";
 
         private static readonly JiraServer ServerForType = new JiraServer(null, null, null, null, false, false);
 
@@ -21,18 +22,22 @@ namespace Atlassian.plvs.models.jira {
 
         protected override void loadCustomServerParameters(ParameterStore store, JiraServer server) {
             server.OldSkoolAuth = store.loadParameter(USE_OLDSKOOL_AUTH + "_" + server.GUID, 0) > 0;
+            server.ProjectAffinityID = store.loadParameter(PROJ_AFFINITY_ID + "_" + server.GUID, 0);
         }
 
         protected override void saveCustomServerParameters(ParameterStore store, JiraServer server) {
             store.storeParameter(USE_OLDSKOOL_AUTH + "_" + server.GUID, server.OldSkoolAuth ? 1 : 0);
+            store.storeParameter(PROJ_AFFINITY_ID + "_" + server.GUID, server.ProjectAffinityID);
         }
 
         protected override void loadCustomServerParameters(RegistryKey key, JiraServer server) {
             server.OldSkoolAuth = (int)key.GetValue(USE_OLDSKOOL_AUTH, 0) > 0;
+            server.ProjectAffinityID = (int)key.GetValue(PROJ_AFFINITY_ID, 0);
         }
 
         protected override void saveCustomServerParameters(RegistryKey key, JiraServer server) {
             key.SetValue(USE_OLDSKOOL_AUTH, server.OldSkoolAuth ? 1 : 0);
+            key.SetValue(PROJ_AFFINITY_ID, server.ProjectAffinityID);
         }
 
         protected override JiraServer createServer(Guid guid, string name, string url, string userName, string password, 

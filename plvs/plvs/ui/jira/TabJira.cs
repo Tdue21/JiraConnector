@@ -616,6 +616,19 @@ namespace Atlassian.plvs.ui.jira {
                         ImageCache.Instance.getImage(server, s.IconUrl);
                     }
 
+                    if (server.ProjectAffinityID != 0)
+                    {
+                        status.setInfo("[" + server.Name + "] Loading project affinity data...");
+                        var projectList = Facade.getProjects(server);
+                        foreach (JiraProject s in projectList)
+                        {
+                            if(server.ProjectAffinityID == s.Id)
+                            { server.ProjectAffinity = s; }
+                        }
+                    }
+                
+
+
                     status.setInfo("[" + server.Name + "] Loading saved filters...");
                     PlvsLogger.log("reloadKnownServersWorker() - [" + server.Name + "] Loading saved filters...");
                     List<JiraSavedFilter> filters = Facade.getSavedFilters(server);

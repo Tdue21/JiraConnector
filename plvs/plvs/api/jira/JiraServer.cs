@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text;
+using Atlassian.plvs.api.jira.facade;
 
 namespace Atlassian.plvs.api.jira {
     public class JiraServer : Server {
@@ -7,6 +8,7 @@ namespace Atlassian.plvs.api.jira {
         public int BuildNumber { get; set; }
         public string Version { get; set; }
         public string ServerTitle { get; set; }
+        public int ProjectAffinityID { get; set; }
         public JiraProject ProjectAffinity { get; set; }
 
         public bool OldSkoolAuth { get; set; }
@@ -18,6 +20,12 @@ namespace Atlassian.plvs.api.jira {
 
         public JiraServer(Guid guid, string name, string url, string userName, string password, bool noProxy, bool oldSkoolAuth, bool enabled) 
             : base(guid, name, url, userName, password, noProxy, enabled) {
+            OldSkoolAuth = oldSkoolAuth;
+        }
+
+        public JiraServer(Guid guid, string name, string url, string userName, string password, bool noProxy, bool oldSkoolAuth, bool enabled, string projectAffinityID)
+    : base(guid, name, url, userName, password, noProxy, enabled)
+        {
             OldSkoolAuth = oldSkoolAuth;
         }
 
@@ -37,6 +45,16 @@ namespace Atlassian.plvs.api.jira {
             sb.Append(serverDetailsHtmlTableEnd());
             return sb.ToString();
 
+        }
+
+        public void InsertProjectAffinity()
+        {
+            //AbstractJiraServerFacade facade=new 
+            //if (this.ProjectAffinityID != 0)
+            //{
+            //    var projectList = facade.getProjects(this);
+
+            //}
         }
 
         public override Guid Type { get { return JiraServerTypeGuid; } }

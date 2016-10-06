@@ -107,6 +107,8 @@ namespace Atlassian.plvs.models {
 
                         loadCustomServerParameters(store, server);
 
+                        
+
                         addServer(server, true);
                     }
                 }

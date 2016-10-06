@@ -78,6 +78,7 @@ namespace Atlassian.plvs.dialogs.jira {
             server.IsShared = checkShared.Checked;
             server.NoProxy = checkDontUseProxy.Checked;
             server.OldSkoolAuth = checkUseOldskoolAuth.Checked;
+            
         }
 
         private void name_TextChanged(object sender, EventArgs e) {
@@ -158,6 +159,7 @@ namespace Atlassian.plvs.dialogs.jira {
                 return;
             }
             server.ProjectAffinity = (JiraProject)projectAffinityCmb.SelectedItem;
+            server.ProjectAffinityID = server.ProjectAffinity.Id;
         }
     }
 }
