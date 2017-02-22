@@ -184,30 +184,30 @@ namespace Atlassian.plvs.windows {
         public void setAutoupdateAvailable(Autoupdate.UpdateAction action) {
             Invoke(new MethodInvoker(delegate
                                          {
-                                             updateAction = action;
-                                             updateException = null;
-                                             notifyUpdate.Visible = true;
-                                             notifyUpdate.Icon = Icon.FromHandle(Resources.ico_updateavailable.GetHicon());
-                                             notifyUpdate.Text = "New version of the connector available, double-click to install";
-                                             notifyUpdate.BalloonTipIcon = ToolTipIcon.Info;
-                                             notifyUpdate.BalloonTipTitle = UPDATE_BALOON_TITLE;
-                                             notifyUpdate.BalloonTipText = "New version of the connector is available, click here to install";
-                                             notifyUpdate.ShowBalloonTip(UPDATE_BALOON_TIMEOUT);
+                                             //updateAction = action;
+                                             //updateException = null;
+                                             //notifyUpdate.Visible = true;
+                                             //notifyUpdate.Icon = Icon.FromHandle(Resources.ico_updateavailable.GetHicon());
+                                             //notifyUpdate.Text = "New version of the connector available, double-click to install";
+                                             //notifyUpdate.BalloonTipIcon = ToolTipIcon.Info;
+                                             //notifyUpdate.BalloonTipTitle = UPDATE_BALOON_TITLE;
+                                             //notifyUpdate.BalloonTipText = "New version of the connector is available, click here to install";
+                                             //notifyUpdate.ShowBalloonTip(UPDATE_BALOON_TIMEOUT);
                                          }));
         }
 
         public void setAutoupdateUnavailable(Exception exception) {
             Invoke(new MethodInvoker(delegate
                                          {
-                                             updateAction = null;
-                                             updateException = exception;
-                                             notifyUpdate.Visible = true;
-                                             notifyUpdate.Icon = Icon.FromHandle(Resources.ico_updatenotavailable.GetHicon());
-                                             notifyUpdate.Text = "Unable to retrieve update information, double-click for details";
-                                             notifyUpdate.BalloonTipIcon = ToolTipIcon.Error;
-                                             notifyUpdate.BalloonTipTitle = UPDATE_BALOON_TITLE;
-                                             notifyUpdate.BalloonTipText = "Unable to retrieve connector update information, click here for details";
-                                             notifyUpdate.ShowBalloonTip(UPDATE_BALOON_TIMEOUT);
+                                             //updateAction = null;
+                                             //updateException = exception;
+                                             //notifyUpdate.Visible = true;
+                                             //notifyUpdate.Icon = Icon.FromHandle(Resources.ico_updatenotavailable.GetHicon());
+                                             //notifyUpdate.Text = "Unable to retrieve update information, double-click for details";
+                                             //notifyUpdate.BalloonTipIcon = ToolTipIcon.Error;
+                                             //notifyUpdate.BalloonTipTitle = UPDATE_BALOON_TITLE;
+                                             //notifyUpdate.BalloonTipText = "Unable to retrieve connector update information, click here for details";
+                                             //notifyUpdate.ShowBalloonTip(UPDATE_BALOON_TIMEOUT);
                                          }));
         }
 

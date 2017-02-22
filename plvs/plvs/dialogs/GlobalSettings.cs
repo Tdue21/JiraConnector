@@ -63,7 +63,8 @@ namespace Atlassian.plvs.dialogs {
                     throw new Exception();
                 }
                 JiraIssuesBatch = (int) root.GetValue(REG_ISSUE_BATCH_SIZE, DEFAULT_ISSUE_BATCH_SIZE);
-                AutoupdateEnabled = (int) root.GetValue(REG_AUTOUPDATE, 1) > 0;
+                //AutoupdateEnabled = (int)root.GetValue(REG_AUTOUPDATE, 1) > 0;
+                AutoupdateEnabled = false;
                 AutoupdateSnapshots = (int) root.GetValue(REG_CHECK_SNAPSHOTS, 0) > 0;
                 ReportUsage = (int) root.GetValue(REG_REPORT_USAGE, 1) > 0;
                 CheckStableOnlyNow = (int) root.GetValue(REG_MANUAL_UPDATE_STABLE_ONLY, 1) > 0;
@@ -90,7 +91,7 @@ namespace Atlassian.plvs.dialogs {
                 proxyPassword = DPApi.decrypt((string) root.GetValue(REG_PROXY_PASSWORD, ""), PASSWORD_ENTROPY);
             } catch (Exception) {
                 JiraIssuesBatch = DEFAULT_ISSUE_BATCH_SIZE;
-                AutoupdateEnabled = true;
+                AutoupdateEnabled = false;
                 AutoupdateSnapshots = false;
                 ReportUsage = true;
                 CheckStableOnlyNow = true;
