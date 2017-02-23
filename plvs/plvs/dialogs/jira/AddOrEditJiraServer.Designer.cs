@@ -188,6 +188,7 @@
             this.checkUseOldskoolAuth.TabIndex = 10;
             this.checkUseOldskoolAuth.Text = "Authenticate using URL parameters";
             this.checkUseOldskoolAuth.UseVisualStyleBackColor = true;
+            this.checkUseOldskoolAuth.Visible = false;
             this.checkUseOldskoolAuth.CheckedChanged += new System.EventHandler(this.checkUseOldskoolAuth_CheckedChanged);
             // 
             // label5

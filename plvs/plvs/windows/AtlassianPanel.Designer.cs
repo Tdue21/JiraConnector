@@ -35,6 +35,7 @@ namespace Atlassian.plvs.windows {
             this.productTabs = new System.Windows.Forms.TabControl();
             this.tabIssues = new System.Windows.Forms.TabPage();
             this.tabJira = new plvs.ui.jira.TabJira();
+            this.tabJira = new plvs.ui.jira.TabJira();
             this.tabBuilds = new System.Windows.Forms.TabPage();
             this.tabBamboo = new plvs.ui.bamboo.TabBamboo();
             this.tabReviews = new System.Windows.Forms.TabPage();
@@ -189,6 +190,7 @@ namespace Atlassian.plvs.windows {
             this.buttonAbout.Name = "buttonAbout";
             this.buttonAbout.Size = new System.Drawing.Size(30, 20);
             this.buttonAbout.Text = "About";
+            this.buttonAbout.Visible = false;
             this.buttonAbout.Click += new System.EventHandler(this.buttonAbout_Click);
             // 
             // buttonReportBug
@@ -199,6 +201,7 @@ namespace Atlassian.plvs.windows {
             this.buttonReportBug.Name = "buttonReportBug";
             this.buttonReportBug.Size = new System.Drawing.Size(30, 20);
             this.buttonReportBug.Text = "Report a Bug or Suggest a Feature";
+            this.buttonReportBug.Visible = false;
             this.buttonReportBug.Click += new System.EventHandler(this.buttonReportBug_Click);
             // 
             // toolStripContainer1
